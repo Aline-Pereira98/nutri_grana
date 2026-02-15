@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('forma_pagamentos', function (Blueprint $table) {
             $table->id('id_forma_pagamento');
-            $table->foreignId('id_usuario')->nullable()->constrained('usuarios', 'id_usuario')->cascadeOnDelete();
+            $table->foreignId('id_usuario')->nullable()->constrained('usuario', 'id_usuario')->cascadeOnDelete();
             $table->string('nome', 100);
             $table->enum('tipo_forma_pagamento', ['P', 'C', 'B'])->comment('P = Pix / Dinheiro, C = Cartão de Crédito, B = Boleto'); 
             $table->enum('ativo', ['S', 'N'])->default('S');

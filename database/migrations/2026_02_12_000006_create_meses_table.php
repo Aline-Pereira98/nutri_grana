@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('meses', function (Blueprint $table) {
             $table->id('id_mes');
-            $table->foreignId('id_usuario')->constrained('usuarios', 'id_usuario')->onDelete('cascade');
+            $table->foreignId('id_usuario')->constrained('usuario', 'id_usuario')->onDelete('cascade');
             $table->integer('mes'); 
             $table->integer('ano');
             $table->integer('salario_base')->default(0);

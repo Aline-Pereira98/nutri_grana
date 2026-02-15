@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Usuario;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -46,30 +46,5 @@ class Usuario extends Authenticatable
     public function setSenhaAttribute($value)
     {
         $this->attributes['senha'] = bcrypt($value);
-    }
-
-    public function meses(): HasMany
-    {
-        return $this->hasMany(Meses::class);
-    }
-
-    public function lancamentos(): HasMany
-    {
-        return $this->hasMany(Lancamentos::class);
-    }
-
-    public function categorias(): HasMany
-    {
-        return $this->hasMany(Categorias::class);
-    }
-
-    public function objetivos(): HasMany
-    {
-        return $this->hasMany(Objetivo::class);
-    }
-
-    public function reservaSegurancas(): HasMany
-    {
-        return $this->hasMany(ReservaSeguranca::class);
     }
 }
